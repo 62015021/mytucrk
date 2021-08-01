@@ -3,7 +3,7 @@
     <v-fab-transition>
       <v-parallax
         height="1080"
-        src="https://firebasestorage.googleapis.com/v0/b/dbtruck101.appspot.com/o/backgroung1.png?alt=media&token=5feb2d92-bc8b-48ea-a323-70980faa599e"
+        src="https://firebasestorage.googleapis.com/v0/b/dbturck.appspot.com/o/backgroung1.png?alt=media&token=dc06113e-5d57-4977-a22a-76f633d426a1"
       >
         <v-card width="" height="360px" color="#E3F2FD">
           <v-row>
@@ -18,10 +18,22 @@
               <v-col>
                 <br />
                 <h3>No.ID / รหัสประจำตัว</h3>
-                <v-autocomplete> </v-autocomplete>
+                <v-text-field
+              v-model="title"
+              :disabled="isUpdating"
+              filled
+              color="blue-grey lighten-2"
+              label="No.ID / รหัสประจำตัว"
+            ></v-text-field>
                 <br />
                 <h3>Password / รหัสผ่าน</h3>
-                <v-autocomplete> </v-autocomplete>
+                <v-text-field
+              v-model="title"
+              :disabled="isUpdating"
+              filled
+              color="blue-grey lighten-2"
+              label="Password / รหัสผ่าน"
+            ></v-text-field>
                 <br />
                 <v-btn
                   class="ma-2"
@@ -39,9 +51,12 @@
             </v-col>
           </v-row>
         </v-card>
+        <router-view></router-view>
       </v-parallax>
     </v-fab-transition>
+    
   </div>
+  
 </template>
 
 <script>
@@ -67,12 +82,14 @@
       },
     },
   }
+  
 </script>
+
 
 <style>
 #app {
   /* background-color: rgb(250, 216, 177); */
-  background-image: url("https://firebasestorage.googleapis.com/v0/b/dbtruck101.appspot.com/o/backgroung.png?alt=media&token=13b4597d-24c5-4967-828a-c56f0db36f7a");
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/dbturck.appspot.com/o/backgroung.png?alt=media&token=6e5a9556-f3e0-4f66-9e6e-6ff91436c7b8");
 
   background-repeat: no-repeat;
   background-attachment: fixed;
