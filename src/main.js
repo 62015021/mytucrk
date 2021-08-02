@@ -6,6 +6,7 @@ import vuetify from './plugins/vuetify'
 import firebase from 'firebase'
 
 
+
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyB39pnmM37Wy336PdVE1LFVKLYh-407bzg",
