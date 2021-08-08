@@ -1,15 +1,19 @@
 <template  >
   <div id="app">
+    <!-- <Navbar ></Navbar> -->
     <v-fab-transition>
       <v-parallax
-        height="1080"
+        height=""
         src="https://firebasestorage.googleapis.com/v0/b/dbturck.appspot.com/o/backgroung1.png?alt=media&token=dc06113e-5d57-4977-a22a-76f633d426a1"
       >
+      <br>
         <v-card width="" height="900px" color="#E3F2FD">
           <router-view  ></router-view>
         </v-card>
+        <br>
         
       </v-parallax>
+      
     </v-fab-transition>
     
   </div>
@@ -17,14 +21,19 @@
 </template>
 
 <script>
+
+// import Navbar from "./components/navbar.vue"
+// 
   export default {
-    data () {
+    // components: {
+    //   Navbar,
+    // },
+    data() {
       return {
         
       }
     },
     
-
   }
   
 </script>

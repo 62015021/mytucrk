@@ -1,6 +1,5 @@
 <template>
   <div >
-    {{user}}
     <v-row>
       <v-col ><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></v-col>
     </v-row>
@@ -42,6 +41,7 @@
 import firebase from "firebase";
 import 'firebase/auth'
 import 'firebase/firestore'
+
 
 export default {
   name: "Login",
@@ -86,7 +86,8 @@ export default {
   },
   created() {
     this.getUser()
-  }
+  },
+  
   
 };
 </script>

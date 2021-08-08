@@ -1,14 +1,7 @@
 <template>
   <div>
-    <v-app-bar>
-      <v-btn class="ma-2" outlined color="indigo" @click="logout">
-        ออกจากระบบ
-      </v-btn>
-      <v-btn class="ma-2" outlined color="indigo" to="/adduser">
-        เพิ่มข้อมูลผู้ใช้
-      </v-btn>
-      <v-btn class="ma-2" outlined color="indigo" to="/page"> หน้าหลัก </v-btn>
-    </v-app-bar>
+    <Navbar></Navbar>
+
     <!-- เริ่มฟอมการเพิ่มข้อมูลผู้ใช้ -->
     <v-row>
       <v-col> </v-col>
@@ -95,6 +88,7 @@
 import firebase from "firebase";
 import "firebase/auth";
 import "firebase/firestore";
+import Navbar from "../components/navbar.vue"
 
 export default {
   name: "Adduser",
@@ -143,6 +137,9 @@ export default {
       this.statuscus = "";
     },
   },
+  components: {
+      Navbar,
+    },
 };
 </script>
 

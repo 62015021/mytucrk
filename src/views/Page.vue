@@ -1,13 +1,6 @@
 <template>
   <div>
-    <v-app-bar>
-      <v-btn class="ma-2" outlined color="indigo" @click="logout">
-        ออกจากระบบ
-      </v-btn>
-      <v-btn class="ma-2" outlined color="indigo" to="/adduser">
-        เพิ่มข้อมูลผู้ใช้
-      </v-btn>
-    </v-app-bar>
+    <Navbar></Navbar>
     <v-row >
       <v-col></v-col>
     </v-row>
@@ -21,6 +14,7 @@
 import firebase from "firebase";
 import "firebase/auth";
 import "firebase/firestore";
+import Navbar from "../components/navbar.vue"
 
 export default {
   name: "page",
@@ -53,7 +47,10 @@ export default {
   },
   created() {
     this.getUser()
-  }
+  },
+  components: {
+      Navbar,
+    },
 };
 </script>
 
