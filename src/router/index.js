@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Login from '../views/Login.vue'
 import Adduser from '../views/Adduser.vue'
+import Page from '../views/Page.vue'
 
 Vue.use(VueRouter)
 
@@ -10,7 +10,10 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta:{
+      requireGuest: false
+    }
   },
   // {
   //   path: 't/abou',
@@ -21,17 +24,21 @@ const routes = [
   //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   // },
   {
-    path: '/login',
-    name: 'Login',
-    component: Login
+    path: '/page',
+    name: 'Page',
+    component: Page,
+    meta:{
+      requireAuth: true
+    }
   },
   {
     path: '/adduser',
     name: 'Adduser',
-    component: Adduser
-  }
-  
-
+    component: Adduser,
+    meta:{
+      requireAuth: true
+    }
+  },
 ]
 
 const router = new VueRouter({
@@ -39,5 +46,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+
 
 export default router

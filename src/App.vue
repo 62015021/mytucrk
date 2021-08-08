@@ -6,8 +6,7 @@
         src="https://firebasestorage.googleapis.com/v0/b/dbturck.appspot.com/o/backgroung1.png?alt=media&token=dc06113e-5d57-4977-a22a-76f633d426a1"
       >
         <v-card width="" height="900px" color="#E3F2FD">
-          
-          <router-view></router-view>
+          <router-view  ></router-view>
         </v-card>
         
       </v-parallax>
@@ -24,16 +23,7 @@
         
       }
     },
-    watch: {
-      loader () {
-        const l = this.loader
-        this[l] = !this[l]
-
-        setTimeout(() => (this[l] = false), 3000)
-
-        this.loader = null
-      },
-    },
+    
 
   }
   
