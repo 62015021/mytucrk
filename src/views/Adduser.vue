@@ -1,7 +1,6 @@
 <template>
   <div>
     <Navbar></Navbar>
-
     <!-- เริ่มฟอมการเพิ่มข้อมูลผู้ใช้ -->
     <v-row>
       <v-col> </v-col>
@@ -51,7 +50,7 @@
     <v-row>
       <v-col> </v-col>
       <v-col align="center">
-        <v-radio-group v-model="statuscus" type="text" row >
+        <v-radio-group v-model="statuscus" type="text" row>
           <v-radio label="ผู้ดูเเล" value="1"></v-radio>
           <v-radio label="ช่าง" value="2"></v-radio>
         </v-radio-group>
@@ -72,6 +71,9 @@
       </v-col>
       <v-col> </v-col>
     </v-row>
+    
+    
+
     <!-- {{ statuscus }} -->
     <!--สิ้นสุดฟอมการเพิ่มข้อมูลผู้ใช้ -->
 
@@ -88,7 +90,7 @@
 import firebase from "firebase";
 import "firebase/auth";
 import "firebase/firestore";
-import Navbar from "../components/navbar.vue"
+import Navbar from "../components/navbar.vue";
 
 export default {
   name: "Adduser",
@@ -99,6 +101,7 @@ export default {
       namecus: "",
       numphone: "",
       statuscus: "",
+
     };
   },
 
@@ -118,10 +121,11 @@ export default {
               u_password: this.password,
               u_user: this.namecus,
               u_phone: this.numphone,
-              u_satatus: this.statuscutum,
+              u_satatus: this.statuscus,
             })
             .then((docRef) => {
               console.log("Document written with ID: ", docRef.id);
+              
             })
             .catch((error) => {
               console.error("Error adding document: ", error);
@@ -138,8 +142,8 @@ export default {
     },
   },
   components: {
-      Navbar,
-    },
+    Navbar,
+  },
 };
 </script>
 

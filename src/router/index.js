@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Adduser from '../views/Adduser.vue'
 import Page from '../views/Page.vue'
+import Manageusers from '../views/Manageusers.vue'
 
 Vue.use(VueRouter)
 
@@ -16,7 +17,7 @@ const routes = [
     }
   },
   // {
-  //   path: 't/abou',
+  //   path: 't/abou', Manageuser
   //   name: 'About',
   //   // route level code-splitting
   //   // this generates a separate chunk (about.[hash].js) for this route
@@ -39,6 +40,16 @@ const routes = [
       requireAuth: true
     }
   },
+  {
+    path: '/manageusers',
+    name: 'Manageusers',
+    component: Manageusers,
+    meta:{
+      requireAuth: true
+    }
+  }
+
+
 ]
 
 const router = new VueRouter({

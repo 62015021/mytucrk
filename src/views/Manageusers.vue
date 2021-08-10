@@ -11,7 +11,7 @@
       <td>{{user.u_email}}</td>
       <td>{{user.u_password}}</td>
     </tr>
-    <!-- {{user}} -->
+    {{user}}
 
   </div>
 </template>
@@ -23,7 +23,7 @@ import "firebase/firestore";
 import Navbar from "../components/navbar.vue"
 
 export default {
-  name: "page",
+  name: "Manageusers",
   data() {
     return {
       user: [],
