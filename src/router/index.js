@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Adduser from '../views/Adduser.vue'
 import Page from '../views/Page.vue'
 import Manageusers from '../views/Manageusers.vue'
+import turck from '../views/turck.vue'
 
 Vue.use(VueRouter)
 
@@ -44,6 +45,14 @@ const routes = [
     path: '/manageusers',
     name: 'Manageusers',
     component: Manageusers,
+    meta:{
+      requireAuth: true
+    }
+  },
+  {
+    path: '/turck',
+    name: 'turck',
+    component: turck,
     meta:{
       requireAuth: true
     }

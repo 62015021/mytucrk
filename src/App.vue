@@ -1,20 +1,21 @@
 <template  >
   <div id="app">
-    <!-- <Navbar ></Navbar> -->
-    <v-fab-transition>
+    
       <v-parallax
-        height=""
+        height="1080px"
         src="https://firebasestorage.googleapis.com/v0/b/dbturck.appspot.com/o/backgroung1.png?alt=media&token=dc06113e-5d57-4977-a22a-76f633d426a1"
       >
       <br>
-        <v-card width="" height="900px" color="#E3F2FD">
+        <v-card  height="1080px" color="#E3F2FD">
+          <v-responsive  height="1080px" >
           <router-view  ></router-view>
+          </v-responsive>
         </v-card>
         <br>
         
       </v-parallax>
       
-    </v-fab-transition>
+    
     
   </div>
   

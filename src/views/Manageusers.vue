@@ -1,18 +1,50 @@
 <template>
-  <div>
+  <div >
     <Navbar></Navbar>
-    <v-row >
-      <v-col></v-col>
-    </v-row>
-    <tr v-for="user in user" :key="user.id">
-      <td>{{user.u_user}}</td>
-      <td>{{user.u_satatus}}</td>
-      <td>{{user.u_phone}}</td>
-      <td>{{user.u_email}}</td>
-      <td>{{user.u_password}}</td>
-    </tr>
-    {{user}}
+    <br>
+          
+            <center>
+            <tr v-for="user in user" :key="user.id">
+              <v-card elevation="2" width="550"  align="center">
+                <v-responsive  height="" >
+          
+          
 
+          <v-row>
+            <v-col align="center" >
+                <p>ชื่อ</p><td>{{ user.u_user }}</td>
+            </v-col>
+            <v-col align="center">
+                <p>E-mail</p><td>{{ user.u_email }}</td>
+            </v-col>
+            <v-col align="center">
+                <p>ตำเเหน่ง</p><td>{{ user.u_satatus }}</td>
+            </v-col>
+            <br>
+            <v-col align="center">
+                <p>เบอร์โทรติดต่อ</p><td>{{ user.u_phone }}</td>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col align="center">
+              <p>รหัสผ่าน</p> <td v-show="passShow">{{ user.u_password }}</td>
+            </v-col>
+          </v-row>
+          
+          <v-btn @click="viwe">ดูรหัสผ่าน</v-btn>
+          </v-responsive>
+          </v-card>
+          <br><br>
+          </tr>
+          </center>
+          
+
+          
+          
+        
+      
+    <v-btn elevation="2" fixed fab right bottom to="/adduser">+</v-btn>
+    <!-- {{ user }} -->
   </div>
 </template>
 
@@ -20,7 +52,7 @@
 import firebase from "firebase";
 import "firebase/auth";
 import "firebase/firestore";
-import Navbar from "../components/navbar.vue"
+import Navbar from "../components/navbar.vue";
 
 export default {
   name: "Manageusers",
@@ -28,6 +60,7 @@ export default {
     return {
       user: [],
       name: [],
+      passShow : false,
     };
   },
   methods: {
@@ -47,19 +80,31 @@ export default {
           this.user.push(doc.data());
         });
         console.log(user);
-        
       });
     },
-    
+    viwe (){
+      if (this.passShow == false) {
+        this.passShow = true
+      }else{
+        this.passShow = false
+
+      }
+      
+      
+
+    },
   },
   created() {
-    this.getUser()
+    this.getUser();
   },
   components: {
-      Navbar,
-    },
+    Navbar,
+  },
 };
 </script>
 
 <style>
+body{
+  align-items: center;
+}
 </style>
